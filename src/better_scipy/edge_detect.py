@@ -20,7 +20,8 @@ def get_image(img_path):
 # Function to perform Sobel edge detection
 def edge_detect(image):
     
-    image_array = get_image(image)
+    if isinstance(image, str): image_array = get_image(image)
+    else: image_array = image
 
     if len(image_array.shape) > 2:
         image_array = convert_to_BW(image_array)
@@ -47,4 +48,5 @@ def edge_detect(image):
     G = np.sqrt(Gx**2 + Gy**2)
     G = (G / G.max()) * 255 # Normalize to 0-255
 
+    # mpimg.imsave('tests/edge_detect_expected.jpg', G.astype(np.uint8), cmap='gray')
     return G.astype(np.uint8)
