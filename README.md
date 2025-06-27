@@ -3,8 +3,8 @@
 # Better Scipy
 Image processing package.
 
-# How to Install
+## How to Install
 You should know how to install.
 
-# How to Run
+## How to Run
 Good luck.
