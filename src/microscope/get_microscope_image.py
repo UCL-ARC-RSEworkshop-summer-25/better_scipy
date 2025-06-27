@@ -1,6 +1,7 @@
 """Retrieving microscope image from website."""
 
 import requests 
+import imageio
 from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
@@ -17,6 +18,7 @@ def get_image(image_url = 'http://10.97.23.240/image', display_image=False):
     im = Image.open('microscope_image.png' , 'r')
 
     pix_val = list(im.getdata())
+
 
     pix_val_array = np.array(pix_val)
     #print(pix_val_array.shape)  
