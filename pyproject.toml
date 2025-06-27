@@ -10,3 +10,6 @@ version = "0.1.0"
 packages = [
   "src/better_scipy",
 ]
+
+[tool.pytest.ini_options]
+addopts = '-m "not online"'
