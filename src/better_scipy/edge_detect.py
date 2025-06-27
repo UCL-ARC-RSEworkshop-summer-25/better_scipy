@@ -20,7 +20,8 @@ def get_image(img_path):
 # Function to perform Sobel edge detection
 def edge_detect(image):
     
-    image_array = get_image(image)
+    if isinstance(image, str): image_array = get_image(image)
+    else: image_array = image
 
     if len(image_array.shape) > 2:
         image_array = convert_to_BW(image_array)
