@@ -47,4 +47,5 @@ def edge_detect(image):
     G = np.sqrt(Gx**2 + Gy**2)
     G = (G / G.max()) * 255 # Normalize to 0-255
 
+    # mpimg.imsave('tests/edge_detect_expected.jpg', G.astype(np.uint8), cmap='gray')
     return G.astype(np.uint8)
