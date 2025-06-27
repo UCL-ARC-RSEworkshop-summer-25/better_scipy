@@ -1,4 +1,5 @@
 import numpy as np
+import imageio
 
 def sobel_kernel(axis):
     # Define Sobel kernel
@@ -12,9 +13,17 @@ def convert_to_BW(image_array):
     # Average across RGB channels
     return np.mean(image_array, axis=-1)
 
+def get_image(file_path):
+
+
 # Function to perform Sobel edge detection
-def edge_detect(image_array):
+def edge_detect(image):
     
+    image_array = get_image(image)
+
+    if len(image_array.shape) > 2:
+        image_array = convert_to_BW(image_array)
+
     # Get image dimensions
     rows, cols = image_array.shape
 
