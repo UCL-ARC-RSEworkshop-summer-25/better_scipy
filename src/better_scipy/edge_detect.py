@@ -1,5 +1,5 @@
 import numpy as np
-import imageio
+import matplotlib.image as mpimg
 
 def sobel_kernel(axis):
     # Define Sobel kernel
@@ -13,8 +13,9 @@ def convert_to_BW(image_array):
     # Average across RGB channels
     return np.mean(image_array, axis=-1)
 
-def get_image(file_path):
-
+def get_image(img_path):
+    img = mpimg.imread(img_path)
+    return img
 
 # Function to perform Sobel edge detection
 def edge_detect(image):
